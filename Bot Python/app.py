@@ -7,7 +7,6 @@ from config import OPENAI_API_KEY
 app = Flask(__name__)
 CORS(app)
 
-# Asegúrate de configurar tu clave API de OpenAI como una variable de entorno o directamente aquí
 openai.api_key = OPENAI_API_KEY
 
 @app.route('/')
