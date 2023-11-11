@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Asegúrate de configurar tu clave API de OpenAI como una variable de entorno o directamente aquí
-openai.api_key = 'Aqui el api=key'
+openai.api_key = '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'
 
 @app.route('/')
 def home():
