@@ -1,0 +1,3 @@
+Flask
+flask-core
+openai==0.28

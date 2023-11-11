@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  app_python:
+    build:
+      context: ./Bot Python
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - SOME_ENV_VAR=value
+
+  app_web:
+    build:
+      context: ./Web
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - app_python
