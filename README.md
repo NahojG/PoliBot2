@@ -33,4 +33,4 @@ Si estás interesado en contribuir a PoliBot, por favor lee `CONTRIBUTING.md` pa
 Este proyecto está bajo la Licencia GNU General Public License v3.0. Ver el archivo `LICENSE` para más detalles.
 
 ## Contacto
-Para más información, contacta a [nombre del desarrollador o correo electrónico].
+Para más información, contacta a ...
