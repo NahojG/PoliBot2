@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
             messageInput.value = '';
 
             // Send the user message to the Flask backend using AJAX
-            fetch('http://http://159.203.99.44:5000/ask', {
+            fetch('http://159.203.99.44:5000/ask', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
