@@ -2,12 +2,13 @@
 import openai
 from flask_cors import CORS
 from flask import Flask, request, jsonify, render_template
+from config import OPENAI_API_KEY
 
 app = Flask(__name__)
 CORS(app)
 
 # Asegúrate de configurar tu clave API de OpenAI como una variable de entorno o directamente aquí
-openai.api_key = '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'
+openai.api_key = OPENAI_API_KEY
 
 @app.route('/')
 def home():
