@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    environment{
+        OPENAI_API_KEY=${OPENAI_API_KEY}
+    }
     stages{
         stage ('Build'){
             steps{
