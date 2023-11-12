@@ -11,15 +11,12 @@ pipeline{
                 echo "Etapa TEST no disponible"
             }
         }
-        stage ('Check Docker Compose') {
-        steps {
-            sh "docker-compose --version"
-            }
-        }
         stage ('Deploy'){
             steps{
-                sh "docker-compose down -v"
-                sh "docker-compose up -d --build"
+                withEnv(["PATH+DOCKER=/usr/local/bin"]) {
+                    sh "docker-compose down -v"
+                    sh "docker-compose up -d --build"
+                }
             }
         }
     }
