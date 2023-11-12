@@ -11,6 +11,11 @@ pipeline{
                 echo "Etapa TEST no disponible"
             }
         }
+        stage ('Check Docker Compose') {
+        steps {
+            sh "docker-compose --version"
+            }
+        }
         stage ('Deploy'){
             steps{
                 sh "docker-compose down -v"
