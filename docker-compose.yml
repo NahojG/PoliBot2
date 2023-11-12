@@ -7,9 +7,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5000:5000"
-    environment:
-      - SOME_ENV_VAR=value
+    environment:      
       - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - SOME_ENV_VAR=value
 
   app_web:
     build:
