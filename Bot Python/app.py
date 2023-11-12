@@ -8,7 +8,7 @@ from flask import Flask, request, jsonify, render_template
 app = Flask(__name__)
 CORS(app)
 
-openai.api_key = os.getenv.get('OPENAI_API_KEY')
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 @app.route('/')
 def home():
