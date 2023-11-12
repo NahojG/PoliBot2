@@ -13,8 +13,10 @@ pipeline{
         }
         stage ('Deploy'){
             steps{
-                sh "docker-compose down -v"
-                sh "docker-compose up -d --build"
+                withEnv(["PATH+DOCKER=/usr/local/bin"]) {
+                    sh "docker-compose down -v"
+                    sh "docker-compose up -d --build"
+                }                
             }
         }
     }
