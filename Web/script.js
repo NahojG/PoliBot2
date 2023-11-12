@@ -1,5 +1,4 @@
 import { IP_ADDRESS } from './configJS';
-
 document.addEventListener('DOMContentLoaded', function () {
     
     var sendButton = document.getElementById('send-btn');
