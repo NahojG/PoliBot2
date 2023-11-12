@@ -1,5 +1,6 @@
 
 import openai
+import os
 from flask_cors import CORS
 from flask import Flask, request, jsonify, render_template
 from config import OPENAI_API_KEY
@@ -7,7 +8,7 @@ from config import OPENAI_API_KEY
 app = Flask(__name__)
 CORS(app)
 
-openai.api_key = OPENAI_API_KEY
+openai.api_key = os.getenv.get('OPENAI_API_KEY')
 
 @app.route('/')
 def home():
