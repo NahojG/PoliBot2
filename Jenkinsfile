@@ -6,12 +6,12 @@ pipeline{
                 echo "Estapa BUILD no disponible"
             }
         }
-        stage ("Tests"){
+        stage ('Tests'){
             steps{
                 echo "Etapa TEST no disponible"
             }
         }
-        stage ("Deploy"){
+        stage ('Deploy'){
             steps{
                 sh "/usr/bin/docker-compose down -v"
                 sh "/usr/bin/docker-compose up -d --build"
