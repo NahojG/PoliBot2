@@ -1,4 +1,3 @@
-import { IP_ADDRESS } from './configJS';
 document.addEventListener('DOMContentLoaded', function () {
     
     var sendButton = document.getElementById('send-btn');
@@ -21,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             messageInput.value = '';
 
             // Send the user message to the Flask backend using AJAX
-            fetch(IP_ADDRESS, {
+            fetch('http://159.203.99.44:5000/ask', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
