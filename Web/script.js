@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    
+
     var sendButton = document.getElementById('send-btn');
     var messageInput = document.getElementById('input-msg');
     var chatContent = document.getElementById('chat-content');
@@ -37,12 +37,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Split the reponse into paragraphs
                     var paragraphs = data.response.split('\n')
 
-                    
                     // Create a <p> element for each paragraph
                     paragraphs.forEach(paragraph => {
                         var p = document.createElement('p');
-                        p.textContent = paragraph; 
-                        botDiv.appendChild(p);
+                        if (p !== '\n') {
+                            p.textContent = paragraph;
+                            botDiv.appendChild(p);
+                        }
                     });
 
                     chatContent.appendChild(botDiv);
