@@ -46,15 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     });
 
-                    paragraphs.forEach(paragraph => {
-                        var p = document.createElement('p');
-                        if (p.textContent !== '') {
-                            p.textContent = paragraph;
-                            p.style.marginTop = '1px'; // Adjust as needed
-                            p.style.marginBottom = '1px'; // Adjust as needed
-                            botDiv.appendChild(p);
-                        }
-                    });
 
                     chatContent.appendChild(botDiv);
 
