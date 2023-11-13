@@ -77,7 +77,6 @@ body {
 .bot-message {
   background-color: #fafafa;
   text-align: left;
-  margin-left: auto;
   flex-direction: column;
 }
 
