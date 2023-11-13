@@ -8,7 +8,12 @@ from flask import Flask, request, jsonify, render_template
 app = Flask(__name__)
 CORS(app)
 
-openai.api_key = os.getenv('OPENAI_API_KEY')
+def leer_clave_api(ruta_archivo):
+    with open(ruta_archivo, 'r') as archivo:
+        return archivo.read().strip()
+
+ruta_clave_api = '/app/api.txt'
+openai.api_key = leer_clave_api(ruta_clave_api)
 
 @app.route('/')
 def home():
