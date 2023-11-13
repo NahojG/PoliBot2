@@ -75,8 +75,8 @@ body {
   padding: 10px;
 }
 .bot-message {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   background-color: #fafafa;
   text-align: left;
   flex-direction: column;
