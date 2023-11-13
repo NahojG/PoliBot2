@@ -88,4 +88,5 @@ body {
 
 .message.bot-message p {
   margin-bottom: 3px !important;
+  margin-top: 1px !important;
 }
