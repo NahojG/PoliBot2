@@ -63,11 +63,11 @@ body {
 }
 .message {
   max-width: fit-content;
+  margin: 5px;
   padding: 10px;
   border-radius: 5px;
   background-color: #ffffff;
   display: flex;
-  
 }
 .user-message {
   background-color: #dcf8c6;
@@ -78,8 +78,6 @@ body {
   background-color: #fafafa;
   text-align: left;
   flex-direction: column;
-  margin-top: 0px;
-  margin-bottom: 0px;
 }
 
 .send-btn:disabled {
