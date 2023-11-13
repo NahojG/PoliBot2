@@ -64,7 +64,6 @@ body {
 .message {
   max-width: fit-content;
   padding: 10px;
-  margin: 5px;
   border-radius: 5px;
   background-color: #ffffff;
   display: flex;
