@@ -86,6 +86,6 @@ body {
   cursor: not-allowed; 
 }
 
-.message.bot-message p {
-  margin-bottom: 3px !important;
+.bot-message p {
+  margin-bottom: 3px;
 }
