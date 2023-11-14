@@ -62,6 +62,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    function changeBackgroundImage() {
+        // Generating a random number between 1 and 10
+        var randomNumber = Math.floor(Math.random() * 10) + 1;
+        var imagePath = 'backgrounds/' + randomNumber + '.png'; // Building the image path with folder
+
+        // Assuming you want to change the background of the body
+        document.body.style.backgroundImage = 'url(' + imagePath + ')';
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundRepeat = 'no-repeat';
+    }
+
+    // Change the background image every 30 seconds
+    setInterval(changeBackgroundImage, 30000);
+
+    // Also change the image immediately when the page loads
+    changeBackgroundImage();
+
+
     // Allow pressing "Enter" to send the message
     messageInput.addEventListener('keypress', function (e) {
         if (e.key === 'Enter' && !sendButton.disabled) {
