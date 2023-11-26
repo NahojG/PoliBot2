@@ -14,6 +14,3 @@ before_script:
 
 script:
   - docker-compose up -d
-
-after_script:
-  - docker-compose down
