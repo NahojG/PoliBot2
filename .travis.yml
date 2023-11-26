@@ -8,6 +8,7 @@ services:
 
 before_script:
   - sudo apt-get install build-essential libssl-dev libffi-dev python3-dev
+  - sudo apt instal docker-compose
   - pip install --upgrade setuptools
 
 
