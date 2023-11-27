@@ -8,11 +8,11 @@ services:
 
 before_script:
   - eval "$(ssh-agent -s)"
-  - ssh-add
+  - ssh-add <(echo "$SUPER_SECRET_PRIVATE_KEY")
+  - echo -e "Host 159.203.99.44\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
 
 script:
   - ls
-  - docker-compose up -d
   - scp -o StrictHostKeyChecking=no -r / poliuser@159.203.99.44:/home/poliuser/PoliBot
   - ssh poliuser@159.203.99.44 'cd /home/poliuser/Polibot && ./deploy_script.sh'
