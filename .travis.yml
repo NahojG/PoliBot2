@@ -6,13 +6,8 @@ dist: jammy
 services:
   - docker
 
-before_script:
-  - sudo apt-get install build-essential libssl-dev libffi-dev python3-dev
-  - pip install --upgrade setuptools
-
-
 script:
   - ls
   - docker-compose up -d
-  - scp -r / poliuser@159.203.99.44:/home/poliuser/PoliBot
+  - scp -o StrictHostKeyChecking=no -r / poliuser@159.203.99.44:/home/poliuser/PoliBot
   - ssh poliuser@159.203.99.44 'cd /home/poliuser/Polibot && ./deploy_script.sh'
