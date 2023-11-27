@@ -8,7 +8,7 @@ services:
 
 before_script:
   - eval "$(ssh-agent -s)"
-  - ssh-add <(echo "$SUPER_SECRET_PRIVATE_KEY")
+  - ssh-add <(echo "$PRIVATE_KEY")
   - echo -e "Host 159.203.99.44\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
 script:
