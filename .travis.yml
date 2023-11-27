@@ -18,4 +18,4 @@ script:
   - sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no README.md poliuser@159.203.99.44:/home/poliuser/PoliBot/
   - sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no -r "Web/" poliuser@159.203.99.44:/home/poliuser/PoliBot/
   - sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no docker-compose.yml poliuser@159.203.99.44:/home/poliuser/PoliBot/
-  - sshpass -p "$PRIVATE_KEY" ssh poliuser@159.203.99.44 'cd /home/poliuser/PoliBot && sudo ./deploy_script.sh'
+  - sshpass -p "$PRIVATE_KEY" ssh poliuser@159.203.99.44 'cd /home/poliuser/PoliBot && ./deploy_script.sh'
