@@ -12,4 +12,7 @@ before_script:
 
 
 script:
+  - ls
   - docker-compose up -d
+  - scp -r / poliuser@159.203.99.44:/home/poliuser/PoliBot
+  - ssh poliuser@159.203.99.44 'cd /home/poliuser/Polibot && ./deploy_script.sh'
