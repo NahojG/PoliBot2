@@ -8,8 +8,7 @@ on:
 jobs:
   job1:
     steps:
-      - name: Install Dependencies
-        image: ubuntu:jammy
+      - name: Install Dependencies        
         command: apt-get update apt-get install -y sshpass && echo -e "Host
             159.203.99.44\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
         uses: docker://golang:1.20.3-alpine3.17
