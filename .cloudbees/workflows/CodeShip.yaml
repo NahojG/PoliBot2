@@ -11,11 +11,7 @@ jobs:
       - name: Install Dependencies
         image: ubuntu:jammy
         command:
-          - /bin/bash
-        args:
-          - -c
-          - >
-            apt-get update apt-get install -y sshpass echo -e "Host
+          - apt-get update apt-get install -y sshpass && echo -e "Host
             159.203.99.44\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
@@ -26,16 +22,11 @@ jobs:
       - uses: cloudbees-io/snyk-sast-scan-code@v1
         name: Transfer Files and Run Docker
         image: docker:latest
-        command: ["/bin/sh"]
-        args:
-            - "-c"
-            - |
-              ls
-              sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no -r "Bot Python/" poliuser@159.203.99.44:/home/poliuser/PoliBot/
-              sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no deploy_script.sh poliuser@159.203.99.44:/home/poliuser/PoliBot/
-              sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no Jenkinsfile poliuser@159.203.99.44:/home/poliuser/PoliBot/
-              sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no README.md poliuser@159.203.99.44:/home/poliuser/PoliBot/
-              sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no -r "Web/" poliuser@159.203.99.44:/home/poliuser/PoliBot/
-              sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no docker-compose.yml poliuser@159.203.99.44:/home/poliuser/PoliBot/
+        command: sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no -r "Bot Python/" poliuser@159.203.99.44:/home/poliuser/PoliBot/ &&
+              sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no deploy_script.sh poliuser@159.203.99.44:/home/poliuser/PoliBot/ &&
+              sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no Jenkinsfile poliuser@159.203.99.44:/home/poliuser/PoliBot/ &&
+              sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no README.md poliuser@159.203.99.44:/home/poliuser/PoliBot/ &&
+              sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no -r "Web/" poliuser@159.203.99.44:/home/poliuser/PoliBot/ &&
+              sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no docker-compose.yml poliuser@159.203.99.44:/home/poliuser/PoliBot/ &&
               sshpass -p "$PRIVATE_KEY" ssh poliuser@159.203.99.44 'cd /home/poliuser/PoliBot && sudo docker-compose up -d'
     needs: job1
