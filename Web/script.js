@@ -37,13 +37,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Split the reponse into paragraphs
                     var paragraphs = data.response.split('\n')
 
-                    // Create a <p> element for each paragraph
+                    // Create a <p> element for each paragraph 
                     paragraphs.forEach(paragraph => {
                         var p = document.createElement('p');
+                        
                         if (p !== '\n') {
                             p.textContent = paragraph;
                             botDiv.appendChild(p);
                         }
+
                     });
 
 
