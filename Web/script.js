@@ -79,7 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Also change the image immediately when the page loads
     changeBackgroundImage();
 
-
     // Allow pressing "Enter" to send the message
     messageInput.addEventListener('keypress', function (e) {
         if (e.key === 'Enter' && !sendButton.disabled) {
