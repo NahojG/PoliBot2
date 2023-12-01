@@ -1,0 +1,17 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: Automation
+on:
+  push:
+    branches:
+      - "**"
+jobs:
+  build:
+    steps:
+      - uses: cloudbees-io/jenkins-run-job@v2
+        name: Say Yujuuu
+        with:
+          url: http://159.203.99.44:8080
+          username: poliuser
+          token: 11d932ad7aa1bfb79fa39ec37bbbfc363c
+          job-name: Server_up
