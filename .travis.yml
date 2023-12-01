@@ -1,0 +1,21 @@
+language: python
+python:
+  - "3.10"
+dist: jammy
+
+services:
+  - docker
+
+before_install:
+  - sudo apt-get install -y sshpass
+  - echo -e "Host 159.203.99.44\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+
+script:
+  - ls
+  - sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no -r "Bot Python/" poliuser@159.203.99.44:/home/poliuser/PoliBot/
+  - sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no deploy_script.sh poliuser@159.203.99.44:/home/poliuser/PoliBot/
+  - sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no Jenkinsfile poliuser@159.203.99.44:/home/poliuser/PoliBot/
+  - sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no README.md poliuser@159.203.99.44:/home/poliuser/PoliBot/
+  - sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no -r "Web/" poliuser@159.203.99.44:/home/poliuser/PoliBot/
+  - sshpass -p "$PRIVATE_KEY" scp -o StrictHostKeyChecking=no docker-compose.yml poliuser@159.203.99.44:/home/poliuser/PoliBot/
+  - sshpass -p "$PRIVATE_KEY" ssh poliuser@159.203.99.44 'cd /home/poliuser/PoliBot && sudo docker-compose up -d'
